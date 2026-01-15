@@ -1,0 +1,29 @@
+﻿services:
+  db:
+    image: postgres:latest
+    container_name: product-catalog-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ProductCatalogAPI
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    image: product-catalog-api
+    build:
+      context: ./Product Catalog API
+      dockerfile: Dockerfile
+    container_name: product-catalog-api
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Port=5432;Database=ProductCatalogAPI;User Id=postgres;Password=postgres;trust server certificate=true
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
