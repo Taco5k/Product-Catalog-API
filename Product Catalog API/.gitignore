@@ -1,0 +1,62 @@
+# Rider-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea/*
+# Ignore attachments directory
+attachments/
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.rsuser
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+out/
+
+# .NET Core/.NET 8 specific files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs and databases
+*.log
+*.ldf
+*.mdf
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Rider-specific exclusions
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/libraries/
+.idea/inspectionProfiles/
+.idea/vcs.xml
+.idea/gradle.xml
+.idea/sonarlint/
+
+# Exclude Rider workspace file to avoid conflicts
+.idea/.idea.*
+
+# Ignore JetBrains run/debug configurations
+.idea/runConfigurations/
+
+# Ignore Rider File Watchers
+.idea/fileTemplates/
+
+# Package directories and lockfiles
+**/node_modules/
+*.lock.json
